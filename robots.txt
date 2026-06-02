@@ -1,0 +1,25 @@
+# Observatorio sobre Derecho de Género y Seguridad Jurídica
+# robots.txt - Configuración para motores de búsqueda
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /img/
+Disallow: /admin/
+Disallow: /.git/
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://observatoriogeneroyseguridad.netlify.app/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
