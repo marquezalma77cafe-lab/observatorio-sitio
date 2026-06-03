@@ -937,6 +937,74 @@ button, input, textarea {
   min-height: 1em;
 }
 
+/* ====== Organismos Internacionales ====== */
+
+.organismos-section {
+  background: var(--paper);
+  border-top: 1px solid var(--line-soft);
+}
+
+.organismos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.organismo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: clamp(24px, 2.5vw, 32px);
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  border-top: 3px solid var(--purple-line);
+  text-decoration: none;
+  transition: transform .3s ease, box-shadow .3s ease, border-top-color .3s ease;
+}
+.organismo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--purple);
+}
+
+.organismo-sigla {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--purple);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.organismo-nombre {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  flex: 1;
+}
+
+.organismo-link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 4px;
+  transition: color .2s ease;
+}
+.organismo-card:hover .organismo-link { color: var(--purple); }
+
+@media (max-width: 1024px) {
+  .organismos-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px) {
+  .organismos-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 420px) {
+  .organismos-grid { grid-template-columns: 1fr; }
+}
+
 /* ====== Contacto ====== */
 
 .contacto-section {
