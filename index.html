@@ -272,6 +272,7 @@
           <h3>Investigación</h3>
           <p>Producción académica rigurosa en derecho de género, derechos humanos y seguridad jurídica con metodologías
             contemporáneas.</p>
+          <a href="#biografias" class="pillar-link" onclick="toggleBiografias(event)">Mujeres de la ciencia →</a>
         </article>
 
         <article class="pillar">
@@ -299,6 +300,86 @@
             y los derechos humanos.</p>
           <a href="#tratados" class="pillar-link" onclick="toggleTratados(event)">Ver tratados internacionales →</a>
         </article>
+      </div>
+
+      <!-- ── BIOGRAFÍAS MUJERES DE LA CIENCIA ── -->
+      <div class="biografias-block" id="biografias" data-open="false">
+        <button class="biografias-head" onclick="toggleBiografias()" aria-expanded="false">
+          <div>
+            <span class="eyebrow">Referentes Científicas</span>
+            <h3 class="biografias-title">Mujeres que transformaron la ciencia y los derechos humanos</h3>
+          </div>
+          <span class="tratados-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div class="biografias-lista" id="biografias-lista">
+          <div class="bio-grid">
+
+            <article class="bio-card">
+              <div class="bio-header">
+                <span class="bio-inicial">MC</span>
+                <div>
+                  <h4 class="bio-nombre">Marie Curie</h4>
+                  <span class="bio-año">Polonia · 1867–1934</span>
+                </div>
+              </div>
+              <p class="bio-texto">Primera mujer en ganar el Premio Nobel y única persona en recibirlo en dos disciplinas científicas distintas — Física (1903) y Química (1911). Descubrió los elementos polonio y radio. Pionera en investigación sobre radioactividad, abrió camino para generaciones de mujeres en ciencias exactas en un mundo que les cerraba las puertas de las universidades.</p>
+              <span class="bio-campo">Física · Química</span>
+            </article>
+
+            <article class="bio-card">
+              <div class="bio-header">
+                <span class="bio-inicial">RF</span>
+                <div>
+                  <h4 class="bio-nombre">Rosalind Franklin</h4>
+                  <span class="bio-año">Reino Unido · 1920–1958</span>
+                </div>
+              </div>
+              <p class="bio-texto">Química y cristalógrafa cuya fotografía de rayos X del ADN — conocida como la "Fotografía 51" — fue fundamental para descubrir la estructura de doble hélice del ADN. Su contribución fue ignorada durante décadas y el Nobel fue otorgado a sus colegas masculinos. Su caso es referente histórico del sesgo de género en la ciencia.</p>
+              <span class="bio-campo">Biología molecular · Química</span>
+            </article>
+
+            <article class="bio-card">
+              <div class="bio-header">
+                <span class="bio-inicial">MM</span>
+                <div>
+                  <h4 class="bio-nombre">Matilde Montoya</h4>
+                  <span class="bio-año">México · 1859–1938</span>
+                </div>
+              </div>
+              <p class="bio-texto">Primera mujer mexicana en obtener el título de médica cirujana en 1887, en una época en que las leyes impedían a las mujeres estudiar medicina. Tuvo que luchar judicialmente para que el presidente Porfirio Díaz firmara un decreto especial que le permitiera graduarse. Su batalla legal es un hito en la historia de los derechos de las mujeres en México.</p>
+              <span class="bio-campo">Medicina · Derechos de las mujeres</span>
+            </article>
+
+            <article class="bio-card">
+              <div class="bio-header">
+                <span class="bio-inicial">AL</span>
+                <div>
+                  <h4 class="bio-nombre">Ada Lovelace</h4>
+                  <span class="bio-año">Reino Unido · 1815–1852</span>
+                </div>
+              </div>
+              <p class="bio-texto">Matemática considerada la primera programadora de la historia. Colaboró con Charles Babbage en la Máquina Analítica y desarrolló el primer algoritmo diseñado para ser procesado por una máquina. Visionó el potencial de las computadoras más allá del cálculo numérico, anticipando conceptos que definen la informática moderna más de un siglo después.</p>
+              <span class="bio-campo">Matemáticas · Computación</span>
+            </article>
+
+            <article class="bio-card">
+              <div class="bio-header">
+                <span class="bio-inicial">RL</span>
+                <div>
+                  <h4 class="bio-nombre">Rita Levi-Montalcini</h4>
+                  <span class="bio-año">Italia · 1909–2012</span>
+                </div>
+              </div>
+              <p class="bio-texto">Neuróloga italiana que descubrió el Factor de Crecimiento Nervioso (NGF), lo que le valió el Premio Nobel de Fisiología o Medicina en 1986. Continuó investigando activamente hasta los 100 años. Realizó sus primeras investigaciones clandestinamente durante la Segunda Guerra Mundial, cuando las leyes raciales italianas le prohibían trabajar por ser judía.</p>
+              <span class="bio-campo">Neurociencia · Medicina</span>
+            </article>
+
+          </div>
+        </div>
       </div>
 
       <!-- ── TRATADOS INTERNACIONALES ── -->
@@ -794,6 +875,16 @@
 
   <script src="script.js"></script>
   <script>
+    function toggleBiografias(e) {
+      if (e) { e.preventDefault(); }
+      const block = document.getElementById('biografias');
+      const btn   = block.querySelector('.biografias-head');
+      const open  = block.dataset.open === 'true';
+      block.dataset.open = open ? 'false' : 'true';
+      btn.setAttribute('aria-expanded', !open);
+      if (!open) block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
     function toggleTratados(e) {
       if (e) { e.preventDefault(); }
       const block = document.getElementById('tratados');

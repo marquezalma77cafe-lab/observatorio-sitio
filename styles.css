@@ -448,6 +448,133 @@ button, input, textarea {
 }
 .pillar-link:hover { color: var(--gold); border-color: var(--gold); }
 
+/* ── Biografías Mujeres de la Ciencia ── */
+.biografias-block {
+  margin: clamp(40px, 5vw, 60px) 0 0;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.biografias-head {
+  width: 100%;
+  background: var(--gold);
+  padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3vw, 36px);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+  transition: background .2s ease;
+}
+.biografias-head:hover { background: var(--gold-light); }
+.biografias-head .eyebrow { color: var(--white); }
+.biografias-head .eyebrow::after { background: var(--white); }
+
+.biografias-title {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: var(--white);
+  margin-top: 14px;
+  line-height: 1.3;
+}
+
+.biografias-block .tratados-chevron { color: var(--white); }
+.biografias-block[data-open="true"] .tratados-chevron { transform: rotate(180deg); }
+
+.biografias-lista {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s cubic-bezier(.4,0,.2,1);
+  background: var(--paper-warm);
+}
+.biografias-block[data-open="true"] .biografias-lista { max-height: 1200px; }
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.bio-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: clamp(20px, 2.5vw, 28px);
+  border: 1px solid var(--line-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.bio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.bio-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bio-inicial {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  border: 2px solid var(--gold-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.bio-nombre {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.bio-año {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+.bio-texto {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  flex: 1;
+}
+
+.bio-campo {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold);
+  background: var(--gold-soft);
+  padding: 4px 10px;
+  border-radius: 100px;
+  align-self: flex-start;
+}
+
+@media (max-width: 1024px) { .bio-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 680px)  { .bio-grid { grid-template-columns: 1fr; } }
+
 /* ── Tratados Internacionales ── */
 .tratados-block {
   margin: clamp(40px, 5vw, 60px) 0 clamp(50px, 6vw, 70px);
