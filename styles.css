@@ -491,7 +491,7 @@ button, input, textarea {
   transition: max-height .5s cubic-bezier(.4,0,.2,1);
   background: var(--paper-warm);
 }
-.biografias-block[data-open="true"] .biografias-lista { max-height: 1200px; }
+.biografias-block[data-open="true"] .biografias-lista { max-height: 1600px; }
 
 .bio-grid {
   display: grid;
