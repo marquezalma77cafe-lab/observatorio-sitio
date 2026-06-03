@@ -434,6 +434,107 @@ button, input, textarea {
   line-height: 1.65;
 }
 
+.pillar-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--purple);
+  text-decoration: none;
+  border-bottom: 1px solid var(--purple-line);
+  padding-bottom: 2px;
+  transition: color .2s, border-color .2s;
+}
+.pillar-link:hover { color: var(--gold); border-color: var(--gold); }
+
+/* ── Tratados Internacionales ── */
+.tratados-block {
+  margin: clamp(40px, 5vw, 60px) 0 clamp(50px, 6vw, 70px);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.tratados-head {
+  background: var(--purple);
+  padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3vw, 36px);
+}
+.tratados-head .eyebrow { color: var(--gold-light); }
+.tratados-head .eyebrow::after { background: var(--gold-light); }
+
+.tratados-title {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: var(--white);
+  margin-top: 14px;
+  line-height: 1.3;
+}
+
+.tratados-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tratados-lista li { border-bottom: 1px solid var(--line-soft); }
+.tratados-lista li:last-child { border-bottom: none; }
+
+.tratados-lista a {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 2rem;
+  align-items: center;
+  gap: 16px;
+  padding: 16px clamp(20px, 3vw, 36px);
+  background: var(--white);
+  color: inherit;
+  text-decoration: none;
+  transition: background .2s ease;
+}
+.tratados-lista a:hover { background: var(--purple-soft); }
+
+.tratado-num {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.tratado-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.tratado-info strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.tratado-info em {
+  font-style: normal;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 500;
+}
+
+.tratado-ext {
+  font-size: 1.1rem;
+  color: var(--gold);
+  text-align: right;
+  transition: transform .2s ease;
+}
+.tratados-lista a:hover .tratado-ext { transform: translate(2px, -2px); }
+
+@media (max-width: 680px) {
+  .tratados-lista a { grid-template-columns: 2rem 1fr 1.5rem; gap: 10px; }
+}
+
 .quote-block {
   max-width: 880px;
   margin: 0 auto;
