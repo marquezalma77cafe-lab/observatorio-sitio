@@ -457,9 +457,19 @@ button, input, textarea {
 }
 
 .tratados-head {
+  width: 100%;
   background: var(--purple);
   padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3vw, 36px);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+  transition: background .2s ease;
 }
+.tratados-head:hover { background: var(--purple-deep); }
 .tratados-head .eyebrow { color: var(--gold-light); }
 .tratados-head .eyebrow::after { background: var(--gold-light); }
 
@@ -470,6 +480,22 @@ button, input, textarea {
   color: var(--white);
   margin-top: 14px;
   line-height: 1.3;
+}
+
+.tratados-chevron {
+  color: var(--gold-light);
+  flex-shrink: 0;
+  transition: transform .35s ease;
+}
+.tratados-block[data-open="true"] .tratados-chevron { transform: rotate(180deg); }
+
+.tratados-lista {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .45s cubic-bezier(.4,0,.2,1);
+}
+.tratados-block[data-open="true"] .tratados-lista {
+  max-height: 800px;
 }
 
 .tratados-lista {

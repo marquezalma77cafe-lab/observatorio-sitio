@@ -297,17 +297,24 @@
           <h3>Impacto social</h3>
           <p>Análisis y materiales orientados a fortalecer la igualdad sustantiva, la justicia con perspectiva de género
             y los derechos humanos.</p>
-          <a href="#tratados" class="pillar-link">Ver tratados internacionales →</a>
+          <a href="#tratados" class="pillar-link" onclick="toggleTratados(event)">Ver tratados internacionales →</a>
         </article>
       </div>
 
       <!-- ── TRATADOS INTERNACIONALES ── -->
-      <div class="tratados-block" id="tratados">
-        <div class="tratados-head">
-          <span class="eyebrow">Marco Normativo Internacional</span>
-          <h3 class="tratados-title">10 Tratados internacionales sobre género y derechos humanos</h3>
-        </div>
-        <ol class="tratados-lista">
+      <div class="tratados-block" id="tratados" data-open="false">
+        <button class="tratados-head" onclick="toggleTratados()" aria-expanded="false" aria-controls="tratados-lista">
+          <div>
+            <span class="eyebrow">Marco Normativo Internacional</span>
+            <h3 class="tratados-title">10 Tratados internacionales sobre género y derechos humanos</h3>
+          </div>
+          <span class="tratados-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <ol class="tratados-lista" id="tratados-lista">
           <li>
             <a href="https://www.ohchr.org/es/instruments-mechanisms/instruments/convention-elimination-all-forms-discrimination-against-women" target="_blank" rel="noopener">
               <span class="tratado-num">01</span>
@@ -786,6 +793,19 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    function toggleTratados(e) {
+      if (e) { e.preventDefault(); }
+      const block = document.getElementById('tratados');
+      const btn   = block.querySelector('.tratados-head');
+      const open  = block.dataset.open === 'true';
+      block.dataset.open = open ? 'false' : 'true';
+      btn.setAttribute('aria-expanded', !open);
+      if (!open) {
+        block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
 </body>
 
 </html>
