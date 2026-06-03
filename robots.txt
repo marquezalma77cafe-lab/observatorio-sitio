@@ -11,4 +11,4 @@ User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-Sitemap: https://observatoriogeneroyseguridadmexico.netlify.app/sitemap.xml
+Sitemap: https://marquezalma77cafe-lab.github.io/observatorio-sitio/sitemap.xml
