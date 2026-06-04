@@ -648,6 +648,58 @@ button, input, textarea {
   color: var(--ink-mute);
 }
 
+/* ── Igualdad de Empresas ── */
+.igualdad-empresas-block {
+  margin: clamp(40px, 5vw, 60px) 0 0;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.igualdad-empresas-head {
+  width: 100%;
+  background: var(--gold);
+  padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3vw, 36px);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+  transition: background .2s ease;
+}
+.igualdad-empresas-head:hover { background: var(--gold-light); }
+.igualdad-empresas-head .eyebrow { color: var(--white); }
+.igualdad-empresas-head .eyebrow::after { background: var(--white); }
+.igualdad-empresas-title {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: var(--white);
+  margin-top: 14px;
+  line-height: 1.3;
+}
+.igualdad-empresas-block .tratados-chevron { color: var(--white); }
+.igualdad-empresas-block[data-open="true"] .tratados-chevron { transform: rotate(180deg); }
+.igualdad-empresas-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s cubic-bezier(.4,0,.2,1);
+  background: var(--paper-warm);
+}
+.igualdad-empresas-block[data-open="true"] .igualdad-empresas-content { max-height: 1600px; }
+.igualdad-empresas-empty {
+  padding: 48px;
+  text-align: center;
+}
+.igualdad-empresas-empty p {
+  font-family: var(--ff-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-mute);
+}
+
 /* ── Tratados Internacionales ── */
 .tratados-block {
   margin: clamp(40px, 5vw, 60px) 0 clamp(50px, 6vw, 70px);

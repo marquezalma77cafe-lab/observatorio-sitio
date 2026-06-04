@@ -300,6 +300,7 @@
           <p>Análisis y materiales orientados a fortalecer la igualdad sustantiva, la justicia con perspectiva de género
             y los derechos humanos.</p>
           <a href="#tratados" class="pillar-link" onclick="toggleTratados(event)">Ver tratados internacionales →</a>
+          <a href="#igualdad-empresas" class="pillar-link" onclick="toggleIgualdadEmpresas(event)">Igualdad de empresas →</a>
         </article>
       </div>
 
@@ -530,6 +531,26 @@
             </a>
           </li>
         </ol>
+      </div>
+
+      <!-- ── IGUALDAD DE EMPRESAS ── -->
+      <div class="igualdad-empresas-block" id="igualdad-empresas" data-open="false">
+        <button class="igualdad-empresas-head" onclick="toggleIgualdadEmpresas()" aria-expanded="false">
+          <div>
+            <span class="eyebrow">Impacto Social</span>
+            <h3 class="igualdad-empresas-title">Igualdad de empresas</h3>
+          </div>
+          <span class="tratados-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div class="igualdad-empresas-content" id="igualdad-empresas-content">
+          <div class="igualdad-empresas-empty">
+            <p>El contenido estará disponible próximamente.</p>
+          </div>
+        </div>
       </div>
 
       <div class="quote-block">
@@ -1061,6 +1082,16 @@
       const open  = block.dataset.open === 'true';
       block.dataset.open = open ? 'false' : 'true';
       btn.setAttribute('aria-expanded', !open);
+    }
+
+    function toggleIgualdadEmpresas(e) {
+      if (e) { e.preventDefault(); }
+      const block = document.getElementById('igualdad-empresas');
+      const btn   = block.querySelector('.igualdad-empresas-head');
+      const open  = block.dataset.open === 'true';
+      block.dataset.open = open ? 'false' : 'true';
+      btn.setAttribute('aria-expanded', !open);
+      if (!open) block.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function toggleIndicadores(e) {
