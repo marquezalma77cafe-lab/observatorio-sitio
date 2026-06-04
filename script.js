@@ -152,15 +152,37 @@
     feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
-  /* ---------- Newsletter (visual) ---------- */
-  window.handleNewsletter = function (e) {
+  /* ---------- Newsletter → Formspree ---------- */
+  window.handleNewsletter = async function (e) {
     e.preventDefault();
-    const input = e.target.querySelector('input');
-    const msg = document.getElementById('newsletterMsg');
-    if (input && input.value) {
-      if (msg) msg.textContent = '¡Gracias! Te avisaremos de cada nueva publicación.';
-      input.value = '';
+    const form  = e.target;
+    const input = form.querySelector('input[type="email"]');
+    const msg   = document.getElementById('newsletterMsg');
+    const btn   = form.querySelector('button');
+
+    if (!input || !input.value) return false;
+
+    btn.disabled = true;
+    if (msg) { msg.textContent = 'Enviando…'; msg.style.color = 'rgba(255,255,255,0.7)'; }
+
+    try {
+      const resp = await fetch('https://formspree.io/f/mzdqbyad', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ email: input.value })
+      });
+
+      if (resp.ok) {
+        if (msg) { msg.textContent = '¡Gracias! Te avisaremos de cada nueva publicación.'; msg.style.color = 'var(--gold-light)'; }
+        input.value = '';
+      } else {
+        if (msg) { msg.textContent = 'Hubo un error. Intenta de nuevo.'; msg.style.color = '#ffaaaa'; }
+      }
+    } catch (err) {
+      if (msg) { msg.textContent = 'Sin conexión. Intenta de nuevo.'; msg.style.color = '#ffaaaa'; }
     }
+
+    btn.disabled = false;
     return false;
   };
 
