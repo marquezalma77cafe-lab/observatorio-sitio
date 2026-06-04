@@ -575,6 +575,58 @@ button, input, textarea {
 @media (max-width: 1024px) { .bio-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 680px)  { .bio-grid { grid-template-columns: 1fr; } }
 
+/* ── Indicadores ── */
+.indicadores-block {
+  margin: clamp(40px, 5vw, 60px) 0 0;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.indicadores-head {
+  width: 100%;
+  background: var(--gold);
+  padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3vw, 36px);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+  transition: background .2s ease;
+}
+.indicadores-head:hover { background: var(--gold-light); }
+.indicadores-head .eyebrow { color: var(--white); }
+.indicadores-head .eyebrow::after { background: var(--white); }
+.indicadores-title {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: var(--white);
+  margin-top: 14px;
+  line-height: 1.3;
+}
+.indicadores-block .tratados-chevron { color: var(--white); }
+.indicadores-block[data-open="true"] .tratados-chevron { transform: rotate(180deg); }
+.indicadores-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s cubic-bezier(.4,0,.2,1);
+  background: var(--paper-warm);
+}
+.indicadores-block[data-open="true"] .indicadores-content { max-height: 1600px; }
+.indicadores-empty {
+  padding: 48px;
+  text-align: center;
+}
+.indicadores-empty p {
+  font-family: var(--ff-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-mute);
+}
+
 /* ── Tratados Internacionales ── */
 .tratados-block {
   margin: clamp(40px, 5vw, 60px) 0 clamp(50px, 6vw, 70px);

@@ -195,11 +195,11 @@
         <a href="#ensayos">Ensayos</a>
         <a href="#publicaciones">Publicaciones</a>
         <a href="#organismos">Organismos</a>
-        <a href="#informes">Informes</a>
+        <a href="#informes">Informes de organismos</a>
         <a href="#contacto">Contacto</a>
       </nav>
 
-      <a href="#contacto" class="btn btn-informes">Informes</a>
+      <a href="#contacto" class="btn btn-informes">Solicitar informes</a>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -391,6 +391,26 @@
               <span class="bio-campo">Derecho · Primera abogada de México</span>
             </article>
 
+          </div>
+        </div>
+      </div>
+
+      <!-- ── INDICADORES ── -->
+      <div class="indicadores-block" id="indicadores" data-open="false">
+        <button class="indicadores-head" onclick="toggleIndicadores()" aria-expanded="false">
+          <div>
+            <span class="eyebrow">Datos y Cifras</span>
+            <h3 class="indicadores-title">Indicadores</h3>
+          </div>
+          <span class="tratados-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div class="indicadores-content" id="indicadores-content">
+          <div class="indicadores-empty">
+            <p>Los indicadores estarán disponibles próximamente.</p>
           </div>
         </div>
       </div>
@@ -1017,7 +1037,7 @@
         <div>
           <h4>Producción</h4>
           <a href="#ensayos">Ensayos</a>
-          <a href="#informes">Informes</a>
+          <a href="#informes">Informes de organismos</a>
           <a href="#publicaciones">Publicaciones</a>
         </div>
         <div>
@@ -1041,6 +1061,16 @@
       const open  = block.dataset.open === 'true';
       block.dataset.open = open ? 'false' : 'true';
       btn.setAttribute('aria-expanded', !open);
+    }
+
+    function toggleIndicadores(e) {
+      if (e) { e.preventDefault(); }
+      const block = document.getElementById('indicadores');
+      const btn   = block.querySelector('.indicadores-head');
+      const open  = block.dataset.open === 'true';
+      block.dataset.open = open ? 'false' : 'true';
+      btn.setAttribute('aria-expanded', !open);
+      if (!open) block.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function toggleBiografias(e) {
