@@ -469,6 +469,26 @@ button, input, textarea {
 }
 .pillar-link:hover { color: var(--gold); border-color: var(--gold); }
 
+/* ── Grupo de bloques colapsables ── */
+.bloques-grupo {
+  display: flex;
+  flex-direction: column;
+  margin: clamp(40px, 5vw, 60px) 0 clamp(50px, 6vw, 70px);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(60, 30, 100, 0.12);
+  border: 1px solid var(--line-soft);
+}
+.bloques-grupo > div {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+}
+.bloques-grupo > div:last-child {
+  border-bottom: none !important;
+}
+
 /* ── Biografías Mujeres de la Ciencia ── */
 .biografias-block {
   margin: clamp(40px, 5vw, 60px) 0 0;
@@ -479,8 +499,8 @@ button, input, textarea {
 
 .biografias-head {
   width: 100%;
-  background: var(--gold);
-  padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3vw, 36px);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  padding: clamp(22px, 2.8vw, 32px) clamp(28px, 3.5vw, 44px);
   border: none;
   cursor: pointer;
   display: flex;
@@ -488,9 +508,9 @@ button, input, textarea {
   justify-content: space-between;
   gap: 16px;
   text-align: left;
-  transition: background .2s ease;
+  transition: filter .2s ease;
 }
-.biografias-head:hover { background: var(--gold-light); }
+.biografias-head:hover { filter: brightness(1.08); }
 .biografias-head .eyebrow { color: var(--white); }
 .biografias-head .eyebrow::after { background: var(--white); }
 
@@ -605,8 +625,8 @@ button, input, textarea {
 }
 .indicadores-head {
   width: 100%;
-  background: var(--gold);
-  padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3vw, 36px);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  padding: clamp(22px, 2.8vw, 32px) clamp(28px, 3.5vw, 44px);
   border: none;
   cursor: pointer;
   display: flex;
@@ -614,9 +634,9 @@ button, input, textarea {
   justify-content: space-between;
   gap: 16px;
   text-align: left;
-  transition: background .2s ease;
+  transition: filter .2s ease;
 }
-.indicadores-head:hover { background: var(--gold-light); }
+.indicadores-head:hover { filter: brightness(1.08); }
 .indicadores-head .eyebrow { color: var(--white); }
 .indicadores-head .eyebrow::after { background: var(--white); }
 .indicadores-title {
@@ -657,8 +677,8 @@ button, input, textarea {
 }
 .igualdad-empresas-head {
   width: 100%;
-  background: var(--gold);
-  padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3vw, 36px);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  padding: clamp(22px, 2.8vw, 32px) clamp(28px, 3.5vw, 44px);
   border: none;
   cursor: pointer;
   display: flex;
@@ -666,9 +686,9 @@ button, input, textarea {
   justify-content: space-between;
   gap: 16px;
   text-align: left;
-  transition: background .2s ease;
+  transition: filter .2s ease;
 }
-.igualdad-empresas-head:hover { background: var(--gold-light); }
+.igualdad-empresas-head:hover { filter: brightness(1.08); }
 .igualdad-empresas-head .eyebrow { color: var(--white); }
 .igualdad-empresas-head .eyebrow::after { background: var(--white); }
 .igualdad-empresas-title {
@@ -783,8 +803,8 @@ button, input, textarea {
 
 .tratados-head {
   width: 100%;
-  background: var(--purple);
-  padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3vw, 36px);
+  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-deep) 100%);
+  padding: clamp(22px, 2.8vw, 32px) clamp(28px, 3.5vw, 44px);
   border: none;
   cursor: pointer;
   display: flex;
@@ -792,9 +812,9 @@ button, input, textarea {
   justify-content: space-between;
   gap: 16px;
   text-align: left;
-  transition: background .2s ease;
+  transition: filter .2s ease;
 }
-.tratados-head:hover { background: var(--purple-deep); }
+.tratados-head:hover { filter: brightness(1.12); }
 .tratados-head .eyebrow { color: var(--gold-light); }
 .tratados-head .eyebrow::after { background: var(--gold-light); }
 
