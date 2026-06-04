@@ -881,7 +881,9 @@
           <span class="pub-tag pub-tag-gold">Newsletter</span>
           <h3>Boletín institucional</h3>
           <p>Recibe nuestras publicaciones, ebooks y novedades académicas directamente en tu correo.</p>
-          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <form class="newsletter-form" action="https://formspree.io/f/mzdqbyad" method="POST">
+            <input type="hidden" name="_next" value="https://marquezalma77cafe-lab.github.io/observatorio-sitio/?suscrito=1">
+            <input type="hidden" name="_subject" value="Nueva suscripción al boletín del Observatorio">
             <input type="email" name="email" placeholder="tu@correo.com" required aria-label="Correo electrónico">
             <button type="submit" aria-label="Suscribirme">→</button>
           </form>
