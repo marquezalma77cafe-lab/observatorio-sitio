@@ -166,10 +166,13 @@
     if (msg) { msg.textContent = 'Enviando…'; msg.style.color = 'rgba(255,255,255,0.7)'; }
 
     try {
+      const formData = new FormData();
+      formData.append('email', input.value);
+
       const resp = await fetch('https://formspree.io/f/mzdqbyad', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ email: input.value })
+        headers: { 'Accept': 'application/json' },
+        body: formData
       });
 
       if (resp.ok) {
